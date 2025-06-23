@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Countdown to Akarshi's Birthday 🎉</title>
+<style>
+  body { background: linear-gradient(135deg, #ff9a9e, #fad0c4); text-align: center; padding: 50px; color: #333; font-family: Arial, sans-serif; }
+  h1 { color: #ff2e63; font-size: 3em; }
+  #countdown { font-size: 2em; margin: 20px; padding: 10px; border: 2px dashed #ff2e63; border-radius: 8px; }
+  a { background: #ff2e63; padding: 10px 20px; color: white; border-radius: 8px; text-decoration: none; font-size: 1.5em; }
+  a:hover { background: #ff5c89; }
+</style>
+</head>
+<body>
+  <h1>🎂 Waiting for June 24, 2025... 🎉</h1>
+  <div id="countdown"></div>
+  <a href="memories.html">Enter 🎁</a>
+<script>
+  const eventDate = new Date('2025-06-24T00:00:00');
+  setInterval(() => {
+    const diff = eventDate - new Date();
+    if (diff <= 0) {
+      document.getElementById('countdown').innerText = "Happy Birthday, Akarshi! 🎉";
+    } else {
+      const days = Math.floor(diff / (1000*60*60*24));
+      const hrs = Math.floor((diff / (1000*60*60)) % 24);
+      const mins = Math.floor((diff / (1000*60)) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+      document.getElementById('countdown').innerText = `${days}d ${hrs}h ${mins}m ${secs}s`;
+    }
+  }, 1000);
+</script>
+</body>
+</html>

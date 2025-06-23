@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Memories 📸</title>
+<style>
+  body { background: linear-gradient(135deg, #ff9a9e, #fad0c4); text-align: center; padding: 50px; color: #333; }
+  img { max-width: 400px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2); }
+  button { background: #ff2e63; padding: 10px 20px; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1.2em; margin: 10px; }
+  a { background: #ff2e63; padding: 10px 20px; color: white; border-radius: 8px; text-decoration: none; font-size: 1.2em; }
+</style>
+</head>
+<body>
+  <h1>Beautiful Memories ✨</h1>
+  <img id="slide" src="image1.jpg" alt="Memory" />
+  <br/>
+  <button onclick="nextSlide()">Next Memory ➡️</button>
+  <br/>
+  <a href="video.html">Go to Video 🎥</a>
+<script>
+  const images = ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg'];
+  let index = 0;
+  function nextSlide() {
+    index = (index+1) % images.length;
+    document.getElementById('slide').src = images[index];
+  }
+</script>
+</body>
+</html>
